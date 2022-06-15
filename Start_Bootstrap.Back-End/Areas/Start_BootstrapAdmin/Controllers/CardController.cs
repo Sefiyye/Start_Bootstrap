@@ -12,32 +12,46 @@ namespace Start_Bootstrap.Back_End.Areas.Start_BootstrapAdmin.Controllers
     public class CardController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public CardController(AppDbContext context)
+        public CardController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
-            
+            _env = env;
         }
         public async Task<IActionResult> Index()
         {
             List<Card> cards = await _context.Cards.ToListAsync();
-            
             return View(cards);
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-       public async Task<IActionResult> Create(Card card)
+        public async Task<IActionResult> Detail(int id)
+        {
+            Card card = await _context.Cards.FirstOrDefaultAsync(c => c.Id == id);
+            if (card == null) return NotFound();
+
+            return View(card);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(Card card)
         {
             if (!ModelState.IsValid) return View();
             await _context.AddAsync(card);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
         }
-        public async Task<IActionResult> Detail(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            Card cards = await _context.Cards.FirstOrDefaultAsync(c=>c.Id==id);
-            return View(cards);
+            Card card = await _context.Cards.FirstOrDefaultAsync(c => c.Id == id);
+            if (card == null) return NotFound();
+
+            return View(card);
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
@@ -46,9 +60,7 @@ namespace Start_Bootstrap.Back_End.Areas.Start_BootstrapAdmin.Controllers
             Card existedcard = await _context.Cards.FirstOrDefaultAsync(c => c.Id == id);
             if (existedcard == null) return NotFound();
 
-            if (existedcard.Id != id) return BadRequest();
-
-            existedcard.Id = card.Id;
+            if (existedcard.Id != id) return BadRequest();  
             existedcard.Image = card.Image;
             existedcard.Icon = card.Icon;
             await _context.SaveChangesAsync();
@@ -63,12 +75,13 @@ namespace Start_Bootstrap.Back_End.Areas.Start_BootstrapAdmin.Controllers
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         [ActionName("Delete")]
-        public async Task<IActionResult> DeleteCart(int id)
+        public async Task<IActionResult> Deletecard(int id)
         {
             Card card = await _context.Cards.FirstOrDefaultAsync(c => c.Id == id);
             _context.Cards.Remove(card);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
