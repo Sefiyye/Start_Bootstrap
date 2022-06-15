@@ -1,0 +1,438 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    #nav {
+        background-color: #343a40;
+
+        .container {
+            .row {
+                display: flex;
+
+                .col-lg-6 {
+                    color: white;
+                    margin-top: 25px;
+                    font-size: 18px;
+
+                    h3 {
+                        font-size: 35px;
+                    }
+
+                    ul {
+                        display: flex;
+                        justify-content: end;
+                        align-items: center;
+
+                        li {
+                            list-style: none;
+
+                            a {
+                                margin: 0 8px;
+                                color: white;
+                                text-decoration: none;
+
+                                &:hover {
+                                    color: greenyellow;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    #startBootstrap {
+        background-color: #1abc9c;
+
+        .container {
+            .row {
+                .start-bootstrap {
+                    color: white;
+                    height: 500px;
+                    margin-top: 50px;
+                    text-align: center;
+
+                    .img {
+                        img {
+                            width: 20%;
+                        }
+                    }
+
+                    .title {
+                        margin-top: 30px;
+                        
+
+                        h1 {
+                            font-size: 4rem;
+                        }
+                    }
+
+                    .line-icon {
+                        margin-top: 15px;
+
+                        .icon {
+                            position: relative;
+                            margin: 0 auto;
+                            width: 200px;
+                            i {
+                                font-size: 35px;
+                            }
+                             &::before{
+                                content: "";
+                                position: absolute;
+                                width: 25%;
+                                height: 4px;
+                                background-color: white;
+                            left: 0px;
+                            top: 15px;
+                               
+                            }
+
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                width: 28%;
+                                height: 4px;
+                                background-color: white;
+                                right: 0px;
+                            top: 15px;
+                                
+                            }
+                           
+                        }
+
+                    }
+
+                    .subtitle {
+                        p {
+                            font-size: 25px;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#portfolio {
+    .container {
+        .portfolios {
+            margin-top: 40px;
+
+            .title {
+                text-align: center;
+
+                .name {
+                    h1 {
+                        font-size: 4rem;
+                    }
+
+                }
+
+                .icon {
+                    position: relative;
+                    margin: 0 auto;
+                    width: 200px;
+                    i {
+                        font-size: 35px;
+                    }
+                     &::before{
+                        content: "";
+                        position: absolute;
+                        width: 25%;
+                        height: 4px;
+                        background-color: black;
+                    left: 0px;
+                    top: 15px;
+                       
+                    }
+
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 28%;
+                        height: 4px;
+                        background-color: black;
+                        right: 0px;
+                    top: 15px;
+                        
+                    }
+                   
+                }
+            }
+        }
+
+        .card {
+            border: none;
+
+            .row {
+                .img {
+                    position: relative;
+                    left: 0px;
+                    top: 0px;
+
+                    &:hover {
+                        .backgroun-color {
+                            background-color: rgb(8, 168, 13);
+                            width: 95%;
+                            height: 300px;
+                            border-radius: 5%;
+                            position: absolute;
+                            left: 20px;
+                            top: 10px;
+                            transition: .3s;
+
+                            i {
+
+                                margin-top: 28%;
+                                margin-left: 43%;
+                                font-size: 4rem;
+                                color: white;
+                                opacity: 1;
+                            }
+
+
+                        }
+
+                    }
+
+                    img {
+                        border-radius: 5%;
+                        margin: 10px;
+
+
+
+                    }
+
+                }
+
+                .backgroun-color {
+                    opacity: 0.3;
+
+                    i {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+#about {
+    margin-top: 20px;
+    background-color: #1abc9c;
+
+    .container {
+        .about {
+            height: 400px;
+            text-align: center;
+            color: white;
+
+            .title {
+                h1 {
+                    font-size: 4rem;
+                }
+            }
+
+            .button {
+                margin: 40px;
+
+                i {
+                    margin: 5px;
+                }
+            }
+
+           
+            .icon {
+                position: relative;
+                margin: 0 auto;
+                width: 200px;
+                i {
+                    font-size: 35px;
+                }
+                 &::before{
+                    content: "";
+                    position: absolute;
+                    width: 25%;
+                    height: 4px;
+                    background-color: white;
+                left: 0px;
+                top: 15px;
+                   
+                }
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 28%;
+                    height: 4px;
+                    background-color: white;
+                    right: 0px;
+                top: 15px;
+                    
+                }
+               
+            }
+
+            .subtitle {
+                margin: 0 auto;
+                text-align: center;
+                width: 800px;
+
+                .row {
+                    .col-lg-6 {
+                        p {
+                            text-align: center;
+                            margin-top: 20px;
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    #footer {
+        margin-top: 40px;
+        background-color: #343a40;
+
+        .container {
+            .row {
+                color: white;
+
+                .col-lg-4 {
+                    .title {
+                        margin-top: 50px;
+
+                        h3 {
+                            margin-left: 50px;
+                        }
+                    }
+
+
+                    ul {
+                        display: flex;
+                        align-items: center;
+
+                        margin-top: 20px;
+
+                        li {
+                            height: 30px;
+                            list-style: none;
+                            font-size: 15px;
+
+                            a {
+                                margin: 0 8px;
+
+                            }
+
+                            i {
+
+                                font-size: 14px;
+                                color: #fff;
+                                padding: 8px 0;
+                                border: 1px solid white;
+                                border-radius: 50%;
+                                width: 25px;
+                                height: 25px;
+                                text-align: center;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+
+#input {
+    margin-top: 40px;
+
+    .container {
+        .row {
+            text-align: center;
+
+            .title {
+                h3 {
+                    font-size: 4rem;
+                    color: #343a40;
+                }
+            }
+            .icon {
+                position: relative;
+                margin: 0 auto;
+                width: 200px;
+                i {
+                    font-size: 35px;
+                }
+                 &::before{
+                    content: "";
+                    position: absolute;
+                    width: 25%;
+                    height: 4px;
+                    background-color: black;
+                left: 0px;
+                top: 15px;
+                   
+                }
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 28%;
+                    height: 4px;
+                    background-color: black;
+                    right: 0px;
+                top: 15px;
+                    
+                }
+               
+            }
+            .form-floating {
+                input {
+
+                    font-size: 20px;
+                    border: none;
+                    margin: 30px;
+                    outline: none;
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+
+    }
+}
+
+#end {
+    background-color: #212529;
+
+    .container {
+        .row {
+            .end {
+                text-align: center;
+                font-size: 18px;
+
+                p {
+                    margin-top: 5px;
+                    color: white;
+
+                }
+            }
+        }
+    }
+}

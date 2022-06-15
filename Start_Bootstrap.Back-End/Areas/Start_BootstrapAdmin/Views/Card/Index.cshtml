@@ -1,0 +1,52 @@
+﻿@model List<Card>
+<div class="card-body">
+
+    <div class="table-responsive pt-3">
+        <div class="my-2">
+            <a asp-controller="card" asp-action="create" class="btn btn-outline-info">Create Card</a>
+        </div>
+        <table class="table table-dark">
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                       Icon
+                    </th>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Settings
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Card card in Model)
+                {
+                <tr>
+                    <td>
+                        @card.Id
+                    </td>
+                    <td class="d-flex align-items-center" style="height:100%">
+                        <div class="detail" >
+                            <a class="btn btn-outline-primary" asp-controller="card" asp-action="detail" asp-route-id="@card.Id">Detail</a>
+                        </div>
+                        <div class="edit ms-2">
+                            <a class="btn btn-outline-warning" asp-controller="card" asp-action="edit" asp-route-id="@card.Id">Edit</a>
+                        </div>
+                        <div class="delete ms-2">
+                            <a class="btn btn-outline-danger" asp-controller="card" asp-action="delete" asp-route-id="@card.Id">Delete</a>
+                        </div>
+
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

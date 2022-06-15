@@ -1,0 +1,16 @@
+﻿@model Card
+<form method="post" class="form-control">
+    <div>
+        <label class="mb-3 ">Icon</label>
+        <input class="form-control" asp-for="Icon" /><br />
+        <span class="text-danger" asp-validation-for="Icon"></span>
+    </div>
+    <div>
+        <label class="mb-3 ">Image</label>
+        <input class="form-control" asp-for="Image" /><br />
+        <span class="text-danger" asp-validation-for="Image"></span>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-secondary">Edit Card</button>
+    </div>
+</form>

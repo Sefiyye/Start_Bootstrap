@@ -1,0 +1,21 @@
+﻿@model Card
+<div>
+    <div>
+        <label asp-for="Id">Id</label>
+        <p>@Model.Id</p>
+    </div>
+    <div>
+        <label asp-for="Image">Image</label>
+        <p>@Model.Image</p>
+    </div>
+    <div>
+        <label asp-for="Icon">Icon</label>
+        <p>@Model.Icon</p>
+    </div>
+    <div>
+        <form method="post">
+            <button type="submit" class="btn btn-lg btn-pinterest">Delete</button>
+        </form>
+    </div>
+</div>
+

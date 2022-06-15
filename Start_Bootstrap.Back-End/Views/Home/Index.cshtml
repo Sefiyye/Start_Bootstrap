@@ -1,0 +1,114 @@
+﻿@model HomeVM
+<main>
+        <section id="startBootstrap">
+            <div class="container">
+                <div class="row">
+                    <div class="start-bootstrap">
+                        <div class="img">
+                            <img src="~/assets/img/@Model.MainParts.Image" alt="">
+                        </div>
+                        <div class="title">
+                            <h1><b>@Model.MainParts.Title</b></h1>
+                        </div>
+                      
+                        <div class="line-icon">
+                            <div class="icon">
+                                <i class="@Model.MainParts.Icon"></i>
+                            </div>
+                        </div>
+                        <div class="subtitle">
+                            <p>@Model.MainParts.Subtitle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="container">
+                <div class="portfolios">
+                    <div class="title">
+                        <div class="name">
+                            <h1><b>Portfolio</b></h1>
+                        </div>
+                        
+                        <div class="icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="card">
+                        <div class="row">
+                           @foreach (Card card in Model.Cards)
+                          {
+                                <div class="col-lg-4 img">
+                                <img style="width:100% ;" src="~/assets/img/@card.Image" alt="">
+                                <div class="backgroun-color"><i class="@card.Icon"></i></div>
+                            </div>
+                          }
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container">
+
+                <div class="about">
+
+                    <div class="title">
+                        <h1><b>@Model.Abouts.Title</b></h1>
+                    </div>
+                    <div class="line-icon">
+                        <div class="icon">
+                            <i class="@Model.Abouts.Icon"></i>
+                        </div>
+                    </div>
+                    <div class="subtitle">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>@Model.Abouts.Subtitle1</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>@Model.Abouts.Subtitle2</p>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <button type="button" class="btn btn-outline-light"><i class="fa-solid fa-download"></i>Free
+                                Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="input">
+            <div class="container">
+                <div class="row">
+                    <div class="title">
+                        <h3><b>Contact me</b></h3>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    
+                    <form action="">
+                        <div class="form-floating">
+                            <input style="width:50% ;" type="text" placeholder="Fullname">
+                        </div>
+                        <div class="form-floating">
+                            <input style="width:50% ;" type="text" placeholder="Email-adress">
+                        </div>
+                        <div class="form-floating">
+                            <input style="width:50% ;" type="text" placeholder="Phone number">
+                        </div>
+                        <div class="form-floating">
+                            <input style="width:50% ;" type="text" placeholder="Message">
+                        </div>
+                        <div class="button">
+                            <button type="button" class="btn btn-success">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>

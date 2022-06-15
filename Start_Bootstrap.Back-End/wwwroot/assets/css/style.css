@@ -1,0 +1,383 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header #nav {
+  background-color: #343a40;
+}
+
+header #nav .container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header #nav .container .row .col-lg-6 {
+  color: white;
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+header #nav .container .row .col-lg-6 h3 {
+  font-size: 35px;
+}
+
+header #nav .container .row .col-lg-6 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #nav .container .row .col-lg-6 ul li {
+  list-style: none;
+}
+
+header #nav .container .row .col-lg-6 ul li a {
+  margin: 0 8px;
+  color: white;
+  text-decoration: none;
+}
+
+header #nav .container .row .col-lg-6 ul li a:hover {
+  color: greenyellow;
+}
+
+main #startBootstrap {
+  background-color: #1abc9c;
+}
+
+main #startBootstrap .container .row .start-bootstrap {
+  color: white;
+  height: 500px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+main #startBootstrap .container .row .start-bootstrap .img img {
+  width: 20%;
+}
+
+main #startBootstrap .container .row .start-bootstrap .title {
+  margin-top: 30px;
+}
+
+main #startBootstrap .container .row .start-bootstrap .title h1 {
+  font-size: 4rem;
+}
+
+main #startBootstrap .container .row .start-bootstrap .line-icon {
+  margin-top: 15px;
+}
+
+main #startBootstrap .container .row .start-bootstrap .line-icon .icon {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+}
+
+main #startBootstrap .container .row .start-bootstrap .line-icon .icon i {
+  font-size: 35px;
+}
+
+main #startBootstrap .container .row .start-bootstrap .line-icon .icon::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 4px;
+  background-color: white;
+  left: 0px;
+  top: 15px;
+}
+
+main #startBootstrap .container .row .start-bootstrap .line-icon .icon::after {
+  content: "";
+  position: absolute;
+  width: 28%;
+  height: 4px;
+  background-color: white;
+  right: 0px;
+  top: 15px;
+}
+
+main #startBootstrap .container .row .start-bootstrap .subtitle p {
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+#portfolio .container .portfolios {
+  margin-top: 40px;
+}
+
+#portfolio .container .portfolios .title {
+  text-align: center;
+}
+
+#portfolio .container .portfolios .title .name h1 {
+  font-size: 4rem;
+}
+
+#portfolio .container .portfolios .title .icon {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+}
+
+#portfolio .container .portfolios .title .icon i {
+  font-size: 35px;
+}
+
+#portfolio .container .portfolios .title .icon::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 4px;
+  background-color: black;
+  left: 0px;
+  top: 15px;
+}
+
+#portfolio .container .portfolios .title .icon::after {
+  content: "";
+  position: absolute;
+  width: 28%;
+  height: 4px;
+  background-color: black;
+  right: 0px;
+  top: 15px;
+}
+
+#portfolio .container .card {
+  border: none;
+}
+
+#portfolio .container .card .row .img {
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+
+#portfolio .container .card .row .img:hover .backgroun-color {
+  background-color: #08a80d;
+  width: 95%;
+  height: 300px;
+  border-radius: 5%;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#portfolio .container .card .row .img:hover .backgroun-color i {
+  margin-top: 28%;
+  margin-left: 43%;
+  font-size: 4rem;
+  color: white;
+  opacity: 1;
+}
+
+#portfolio .container .card .row .img img {
+  border-radius: 5%;
+  margin: 10px;
+}
+
+#portfolio .container .card .row .backgroun-color {
+  opacity: 0.3;
+}
+
+#portfolio .container .card .row .backgroun-color i {
+  opacity: 0;
+}
+
+#about {
+  margin-top: 20px;
+  background-color: #1abc9c;
+}
+
+#about .container .about {
+  height: 400px;
+  text-align: center;
+  color: white;
+}
+
+#about .container .about .title h1 {
+  font-size: 4rem;
+}
+
+#about .container .about .button {
+  margin: 40px;
+}
+
+#about .container .about .button i {
+  margin: 5px;
+}
+
+#about .container .about .icon {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+}
+
+#about .container .about .icon i {
+  font-size: 35px;
+}
+
+#about .container .about .icon::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 4px;
+  background-color: white;
+  left: 0px;
+  top: 15px;
+}
+
+#about .container .about .icon::after {
+  content: "";
+  position: absolute;
+  width: 28%;
+  height: 4px;
+  background-color: white;
+  right: 0px;
+  top: 15px;
+}
+
+#about .container .about .subtitle {
+  margin: 0 auto;
+  text-align: center;
+  width: 800px;
+}
+
+#about .container .about .subtitle .row .col-lg-6 p {
+  text-align: center;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer #footer {
+  margin-top: 40px;
+  background-color: #343a40;
+}
+
+footer #footer .container .row {
+  color: white;
+}
+
+footer #footer .container .row .col-lg-4 .title {
+  margin-top: 50px;
+}
+
+footer #footer .container .row .col-lg-4 .title h3 {
+  margin-left: 50px;
+}
+
+footer #footer .container .row .col-lg-4 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+footer #footer .container .row .col-lg-4 ul li {
+  height: 30px;
+  list-style: none;
+  font-size: 15px;
+}
+
+footer #footer .container .row .col-lg-4 ul li a {
+  margin: 0 8px;
+}
+
+footer #footer .container .row .col-lg-4 ul li i {
+  font-size: 14px;
+  color: #fff;
+  padding: 8px 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}
+
+#input {
+  margin-top: 40px;
+}
+
+#input .container .row {
+  text-align: center;
+}
+
+#input .container .row .title h3 {
+  font-size: 4rem;
+  color: #343a40;
+}
+
+#input .container .row .icon {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+}
+
+#input .container .row .icon i {
+  font-size: 35px;
+}
+
+#input .container .row .icon::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 4px;
+  background-color: black;
+  left: 0px;
+  top: 15px;
+}
+
+#input .container .row .icon::after {
+  content: "";
+  position: absolute;
+  width: 28%;
+  height: 4px;
+  background-color: black;
+  right: 0px;
+  top: 15px;
+}
+
+#input .container .row .form-floating input {
+  font-size: 20px;
+  border: none;
+  margin: 30px;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+#end {
+  background-color: #212529;
+}
+
+#end .container .row .end {
+  text-align: center;
+  font-size: 18px;
+}
+
+#end .container .row .end p {
+  margin-top: 5px;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
