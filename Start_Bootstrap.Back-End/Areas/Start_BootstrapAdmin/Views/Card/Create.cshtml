@@ -1,5 +1,5 @@
 ﻿@model Card
-<form method="post" class="form-control">
+<form method="post" enctype="multipart/form-data">
     <div>
         <label class="mb-3">Icon</label>
         <input class="form-control" asp-for="Icon" /><br/>
@@ -11,6 +11,6 @@
         <span class="text-danger" asp-validation-for="Image"></span>
     </div>
     <div>
-        <button type="submit" class="btn btn-secondary"> Create Card</button>
+        <button type="submit" class="btn btn-primary"> Create Card</button>
     </div>
 </form>
