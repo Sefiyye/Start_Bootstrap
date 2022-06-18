@@ -49,10 +49,10 @@ namespace Start_Bootstrap.Back_End
                 name: "areas",
                 pattern: "{area:exists}/{controller=dashboard}/{action=index}/{id?}"
           );
-                endpoints.MapControllerRoute(
-                   name: "default",
-                   pattern: "{controller=home}/{action=index}/{id?}"
-                   );
+                    endpoints.MapControllerRoute(
+                       name: "default",
+                       pattern: "{controller=home}/{action=index}/{id?}"
+                       );
             });
         }
     }

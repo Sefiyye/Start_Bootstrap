@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Start_Bootstrap.Back_End.DAL;
+using Start_Bootstrap.Back_End.Extensions;
 using Start_Bootstrap.Back_End.Models;
+using Start_Bootstrap.Back_End.Utilities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -42,31 +44,63 @@ namespace Start_Bootstrap.Back_End.Areas.Start_BootstrapAdmin.Controllers
         public async Task<IActionResult> Create(Card card)
         {
             if (!ModelState.IsValid) return View();
-            await _context.AddAsync(card);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            if (card.Photo != null)
+            {
+                if (!card.Photo.IsOkay(1))
+                {
+                    card.Image = await card.Photo.FileCreate(_env.WebRootPath, @"assets\img");
+                    await _context.AddAsync(card);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    ModelState.AddModelError("Photo", "Please, choose image file under the 1 mb");
+                    return View();
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("Photo", "Please,choose file");
+                return View();
+            }
         }
+
         public async Task<IActionResult> Edit(int id)
         {
             Card card = await _context.Cards.FirstOrDefaultAsync(c => c.Id == id);
             if (card == null) return NotFound();
-
             return View(card);
         }
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Edit(int id, Card card)
         {
-            Card existedcard = await _context.Cards.FirstOrDefaultAsync(c => c.Id == id);
-            if (existedcard == null) return NotFound();
+            if (!ModelState.IsValid) return View();
+            Card existedCard = await _context.Cards.FirstOrDefaultAsync(p => p.Id == id);
+            if (card.Photo != null)
+            {
+                if (!card.Photo.IsOkay(1))
+                {
+                    string path = _env.WebRootPath + @"assets\img" + existedCard.Image;
+                    if (System.IO.File.Exists(path))
+                    {
+                        System.IO.File.Delete(path);
+                    }
+                    existedCard.Image = await card.Photo.FileCreate(_env.WebRootPath, @"assets\img");
+                }
+                else
+                {
+                    ModelState.AddModelError("Photo", "Please,choose photo under the 1 mb");
+                    return View();
+                }
+            }
 
-            if (existedcard.Id != id) return BadRequest();  
-            existedcard.Image = card.Image;
-            existedcard.Icon = card.Icon;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+
         }
-        public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(int id)
         {
             Card card = await _context.Cards.FirstOrDefaultAsync(c => c.Id == id);
             if (card == null) return NotFound();
