@@ -1,4 +1,4 @@
-﻿@model Setting   
+﻿@model HomeVM 
 <footer>
         <section id="footer">
             <div class="container">
@@ -15,10 +15,10 @@
                             <h3><b>AROUND THE WEB</b></h3>
                         </div>
                         <ul class="social-medias">
-                            <li><a href="#"><i class="@Model.FacebookIcon"></i></a></li>
-                            <li><a href="#"><i class="@Model.TwitterIcon"></i></a></li>
-                            <li><a href="#"><i class="@Model.LinkedinIcon"></i></a></li>
-                            <li><a href="#"><i class="@Model.BasketIcon"></i></a></li>
+                           @foreach (var item in Model.SocialMedias)
+                          {
+                              <li><a href="@item.IconUrl"><i class="@item.Icon"></i></a></li>
+                          }
                         </ul>
                     </div>
                     <div class="col-lg-4">
@@ -26,7 +26,7 @@
                             <h3><b>ABOUT FREELANCER</b></h3>
                         </div>
                         <span>Freelance is a free to use, MIT licensed</span> <br>
-                        <span>Bootstrap theme created by <a href="#">@Model.Link.</a></span>
+                        <span>Bootstrap theme created by <a href="#">@Model.Settings.Link</a></span>
                     </div>
                 </div>
             </div>
